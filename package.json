@@ -6,6 +6,14 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "dependencies": {
+    "@actions/core": "^1.2.3",
+    "@actions/github": "^2.1.1",
+    "archiver": "^5.0.0",
+    "aws-sdk": "^2.658.0",
+    "fs": "0.0.1-security",
+    "path": "^0.12.7"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ahrons-code/aws-lambda-ts-action.git"
