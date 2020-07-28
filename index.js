@@ -15,7 +15,7 @@ try {
   AWS.config.update({region: region, accessKeyId: accessKeyId, secretAccessKey: secretAccessKey});
 
   const workspace = process.env.GITHUB_WORKSPACE;
-  const filePath = path.join(workspace, "/" + lambda_name);
+  const filePath = path.join(lambda_name);
  
 //   var output = fs.createWriteStream(filePath);
 //   var source = fs.createWriteStream( path.basename(workspace));
