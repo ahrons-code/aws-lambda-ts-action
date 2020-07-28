@@ -20,6 +20,7 @@ try {
 //   var output = fs.createWriteStream(filePath);
 //   var source = fs.createWriteStream( path.basename(workspace));
 
+  console.log(filePath)
   send_file(bucket, filePath, lambda_name);
 } catch (error) {
   core.setFailed(error.message);
