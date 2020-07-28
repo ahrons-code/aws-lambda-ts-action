@@ -19,7 +19,7 @@ try {
   var source = fs.createWriteStream(workspace);
 
   zipDirectory(source, output);
-  send_file(bucket, source);
+  send_file(bucket, output);
 } catch (error) {
   core.setFailed(error.message);
 }
