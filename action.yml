@@ -1,0 +1,15 @@
+name: 'aws lambda github action'
+description: 'Zip repo and send to s3.'
+inputs:
+  region:
+    description: 'aws region'
+  accessKeyId:
+    description: 'aws access key'
+  secretAccessKey:
+    description: 'aws secret key'
+  bucket:
+    description: 'aws bucker name'
+
+runs:
+  using: 'node12'
+  main: 'index.js'
