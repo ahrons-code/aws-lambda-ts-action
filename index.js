@@ -17,10 +17,9 @@ try {
   const workspace = process.env.GITHUB_WORKSPACE;
   const filePath = path.join(workspace, "/" + lambda_name);
  
-  var output = fs.createWriteStream(filePath);
-  var source = fs.createWriteStream( path.basename(workspace));
+//   var output = fs.createWriteStream(filePath);
+//   var source = fs.createWriteStream( path.basename(workspace));
 
-  zipDirectory(source, output);
   send_file(bucket, output, lambda_name);
 } catch (error) {
   core.setFailed(error.message);
