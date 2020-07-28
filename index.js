@@ -11,6 +11,9 @@ try {
   const secretAccessKey = core.getInput("secretAccessKey");
   const bucket = core.getInput("bucket");
   const lambda_name = core.getInput("lambdaName");
+
+  AWS.config.update({region: region, accessKeyId: accessKeyId, secretAccessKey: secretAccessKey});
+
   const workspace = process.env.GITHUB_WORKSPACE;
   var output = fs.createWriteStream(workspace + "/" + lambda_name);
   var source = fs.createWriteStream(workspace);
