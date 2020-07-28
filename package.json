@@ -1,0 +1,19 @@
+{
+  "name": "aws-lambda-ts-action",
+  "version": "1.0.0",
+  "description": "zip node files and send to s3 to be able to execute as lambda",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ahrons-code/aws-lambda-ts-action.git"
+  },
+  "author": "willmenn",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ahrons-code/aws-lambda-ts-action/issues"
+  },
+  "homepage": "https://github.com/ahrons-code/aws-lambda-ts-action#readme"
+}
