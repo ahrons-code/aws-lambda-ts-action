@@ -15,16 +15,18 @@ try {
   AWS.config.update({region: region, accessKeyId: accessKeyId, secretAccessKey: secretAccessKey});
 
   const workspace = process.env.GITHUB_WORKSPACE;
-  var output = fs.createWriteStream(workspace + "/" + lambda_name);
-  var source = fs.createWriteStream(workspace);
+  const filePath = path.join(workspace, "/" + lambda_name);
+ 
+  var output = fs.createWriteStream(filePath);
+  var source = fs.createWriteStream( path.basename(workspace));
 
   zipDirectory(source, output);
-  send_file(bucket, output);
+  send_file(bucket, output, lambda_name);
 } catch (error) {
   core.setFailed(error.message);
 }
 
-function send_file(bucket, file) {
+function send_file(bucket, file, key) {
   s3 = new AWS.S3({ apiVersion: "2006-03-01" });
 
   var uploadParams = { Bucket: bucket, Key: "", Body: "" };
@@ -36,7 +38,7 @@ function send_file(bucket, file) {
 
   uploadParams.Body = fileStream;
  
-  uploadParams.Key = path.basename(file);
+  uploadParams.Key = key;
 
   // call S3 to retrieve upload file to specified bucket
   s3.upload(uploadParams, function (err, data) {
