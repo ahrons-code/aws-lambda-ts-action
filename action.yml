@@ -9,7 +9,8 @@ inputs:
     description: 'aws secret key'
   bucket:
     description: 'aws bucker name'
-
+  lambdaName:
+      description: 'file to send'
 runs:
   using: 'node12'
   main: 'index.js'
